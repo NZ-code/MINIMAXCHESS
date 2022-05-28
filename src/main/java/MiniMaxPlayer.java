@@ -9,6 +9,7 @@ import java.util.Random;
 
 public class MiniMaxPlayer extends Player{
     public int depth;
+
     public MiniMaxPlayer(GameLogic gameLogic, int depth){
         super(gameLogic);
         this.depth = depth;

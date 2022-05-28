@@ -14,8 +14,8 @@ public class GameLogic {
     public GameLogic(){
         board = new Board();
         players = new Player[2];
-        players[0] = new RandomPlayer(this); // white
-        players[1] = new MiniMaxPlayer(this,3); // black
+        players[0] = new  SmartMiniMaxPlayer(this,3); // white
+        players[1] = new MiniMaxPlayer(this,4); // black
 
     }
 
@@ -73,7 +73,7 @@ public class GameLogic {
             }
             int all = whiteWins + blackWins + draws;
             System.out.println("ALL GAMES:"+all +" WHITE:" + whiteWins +" BLACK:" + blackWins + " DRAWS:" + draws);
-
+            if(all == 100) break;
             try {
                Thread.sleep(0);
             } catch (InterruptedException e) {
